@@ -8,4 +8,4 @@ phases:
     - npm install --global gatsby-cli
     - yarn 
     - gatsby build
-    - aws s3 sync public s3://brittanyellich.com --delete
+    - aws s3 sync public s3://brittanyellich.com --delete --acl public-read
