@@ -12,15 +12,16 @@ import { Link } from 'gatsby'
 * to a `site-nav-item` class.
 *
 */
-const Navigation = ({ data, navClass }) => (
+const Navigation = ({ navClass }) => (
     <>
-        {data.map((navItem, i) => {
-            if (navItem.url.match(/^\s?http(s?)/gi)) {
-                return <a className={navClass} href={navItem.url} key={i} target="_blank" rel="noopener noreferrer">{navItem.label}</a>
-            } else {
-                return <Link className={navClass} to={navItem.url} key={i}>{navItem.label}</Link>
-            }
-        })}
+        {
+            <>
+            <Link className={navClass} to="/" key="Home">Home</Link>
+            <a className={navClass} href="https://ghost.brittanyellich.com/" key="Blog" rel="noopener noreferrer">Blog</a>
+            <Link className={navClass} to="/projects" key="Projects">Projects</Link>
+            <Link className={navClass} to="/about" key="About">About</Link>
+            </>
+        }
     </>
 )
 
