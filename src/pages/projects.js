@@ -14,6 +14,7 @@ export const Projects = () => {
             <Layout>
                 <article className="content" style={{ textAlign: `center` }}>
                     <h1 className="content-title">Projects</h1>
+                    Under Construction, come back soon!
                     <div className="container">
                         <section className="post-feed">
                             {projects.map((node) => (
