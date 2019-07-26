@@ -8,7 +8,7 @@ const ContactPage = () => (
             <article className="content" style={{ textAlign: `center` }}>
                 <h1 className="content-title">Contact Me</h1>
                 <section className="content-body">
-                    This is where a contact form is gonna go one day!
+                    The best way to get in touch with me is through email at <a href = "mailto: brittany@brittanyellich.com">brittany@brittanyellich.com</a>.
                 </section>
             </article>
         </div>

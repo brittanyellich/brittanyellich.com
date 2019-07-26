@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import { faRss } from '@fortawesome/free-solid-svg-icons'
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
@@ -21,6 +24,7 @@ import '../../styles/app.css'
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = `https://twitter.com/brittanyellich`
+    const linkedInUrl = `https://linkedin.com/in/brittany-ellich`
 
     return (
     <>
@@ -46,8 +50,9 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 </Link>
                             </div>
                             <div className="site-mast-right">
-                                { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/https://ghost.brittanyellich.com/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
+                                <a href={ linkedInUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+                                { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} /></a>}
+                                <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/https://ghost.brittanyellich.com/rss/` } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faRss} /></a>
                             </div>
                         </div>
                         { isHome ?
@@ -80,10 +85,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <footer className="site-foot">
                     <div className="site-foot-nav container">
                         <div className="site-foot-nav-left">
-                            <Link to="/">{site.title}</Link> © 2019 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                            <Link to="/">{site.title}</Link> © 2019
                         </div>
                         <div className="site-foot-nav-right">
                             <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                            <Link className="site-foot-nav-item" to="/contact" key="Contact">Contact</Link>
                         </div>
                     </div>
                 </footer>
