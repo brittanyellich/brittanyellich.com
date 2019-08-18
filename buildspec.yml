@@ -9,4 +9,4 @@ phases:
     - yarn 
     - gatsby build
     - aws s3 sync public s3://brittanyellich.com --delete --acl public-read
-    - aws cloudfront create-invalidation --distribution-id E1JIUIS8GYAMAJ --paths /*
+    - aws cloudfront create-invalidation --distribution-id E1JIUIS8GYAMAJ --paths '/*'
