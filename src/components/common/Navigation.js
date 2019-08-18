@@ -14,10 +14,10 @@ import { Link } from 'gatsby'
 */
 const Navigation = ({ navClass }) => (
     <>
-        <Link className={navClass} to="/" key="Home">Home</Link>
-        <a className={navClass} href="https://ghost.brittanyellich.com/" key="Blog" rel="noopener noreferrer">Blog</a>
-        <Link className={navClass} to="/projects" key="Projects">Projects</Link>
-        <Link className={navClass} to="/about" key="About">About</Link>
+        <Link className={navClass} to="/" key="Home">HOME</Link>
+        <a className={navClass} href="https://ghost.brittanyellich.com/" key="Blog" rel="noopener noreferrer">BLOG</a>
+        <Link className={navClass} to="/projects" key="Projects">PROJECTS</Link>
+        <Link className={navClass} to="/about" key="About">ABOUT</Link>
     </>
 )
 

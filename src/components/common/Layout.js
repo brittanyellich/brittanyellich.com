@@ -4,8 +4,8 @@ import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faRss } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faRss, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
@@ -25,6 +25,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
     const twitterUrl = `https://twitter.com/brittanyellich`
     const linkedInUrl = `https://linkedin.com/in/brittany-ellich`
+    const githubUrl =  `https://github.com/b-marie`
 
     return (
     <>
@@ -42,32 +43,40 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <div className="container">
                         <div className="site-mast">
                             <div className="site-mast-left">
-                                <Link to="/">
-                                    {site.logo ?
-                                        <img className="site-logo" src={site.logo} alt={site.title} />
-                                        : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
-                                    }
-                                </Link>
+                                { isHome ?
+                                    /* The navigation items as setup in Ghost */
+                                    <Navigation data={site.navigation} navClass="site-nav-item" />
+                                :
+                                    <div>
+                                        <Link to="/">
+                                        {site.logo ?
+                                            <img className="site-logo" src={site.logo} alt={site.title} />
+                                            : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
+                                        }
+                                        </Link> 
+                                        <Navigation data={site.navigation} navClass="site-nav-item" />
+                                    </div>
+                                }
                             </div>
                             <div className="site-mast-right">
-                                <a href={ linkedInUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-                                { site.twitter && <a href={ twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} /></a>}
-                                <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/https://ghost.brittanyellich.com/rss/` } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faRss} /></a>
+                                <a href="/contact" className="site-nav-item" title="Contact" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faEnvelope} /></a>
+                                <a href={ linkedInUrl } className="site-nav-item" title="LinkedIn" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+                                <a href={ githubUrl } className="site-nav-item" title="GitHub" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
+                                { site.twitter && <a href={ twitterUrl } title="Twitter" className="site-nav-item" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faTwitter} /></a>}
+                                <a className="site-nav-item" title="RSS" href={ `https://feedly.com/i/subscription/feed/https://ghost.brittanyellich.com/rss/` } target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faRss} /></a>
                             </div>
                         </div>
                         { isHome ?
                             <div className="site-banner">
-                                <h1 className="site-banner-title">Brittany Ellich</h1>
-                                <p className="site-banner-desc">Stories about tech, life, and sometimes both.</p>
+                                {site.logo ?
+                                    <img className="site-logo site-banner-title" src={site.logo} alt={site.title} />
+                                    : <Img fixed={data.file.childImageSharp.fixed} alt={site.title} />
+                                }
+                                <p className="site-banner-desc">Software Engineer </p>
                             </div> :
                             null}
                         <nav className="site-nav">
                             <div className="site-nav-left">
-                                {/* The navigation items as setup in Ghost */}
-                                <Navigation data={site.navigation} navClass="site-nav-item" />
-                            </div>
-                            <div className="site-nav-right">
-                                <Link className="site-nav-button" to="/contact">Contact</Link>
                             </div>
                         </nav>
                     </div>
@@ -89,7 +98,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                         </div>
                         <div className="site-foot-nav-right">
                             <Navigation data={site.navigation} navClass="site-foot-nav-item" />
-                            <Link className="site-foot-nav-item" to="/contact" key="Contact">Contact</Link>
+                            <Link className="site-foot-nav-item" to="/contact" key="Contact">CONTACT</Link>
                         </div>
                     </div>
                 </footer>
