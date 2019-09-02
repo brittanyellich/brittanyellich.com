@@ -1,20 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { Tags } from '@tryghost/helpers-gatsby'
 
-const ProjectCard = (project) => {
+const ProjectCard = ({ project }) => {
     console.log(project)
-    const url = `projects/${project.slug}/`
+    const url = `/projects/${project.slug}/`
 
     return (
-        <Link to={url} className="post-card">
+        <Link to={url} className="project-card">
             <header className="post-card-header">
                 {project.imgUrl &&
                     <div className="post-card-image" style={{
                         backgroundImage: `url(${project.imgUrl})` ,
                     }}></div>}
-                {project.technologiesUsed && <div className="post-card-tags"> <Tags project={project} visibility="public" autolink={false} /></div>}
+                <p className="post-card-tags">{project.technologiesUsed}</p>
                 {project.featured && <span>Featured</span>}
                 <h2 className="post-card-title">{project.title}</h2>
             </header>

@@ -1049,3 +1049,45 @@ h6 {
     max-width: 100%;
     max-height: auto;
 }
+
+/* Quote
+/* ---------------------------------------------------------- */
+.quoteAuthor {
+    font-style: italic;
+}
+
+.quoteQuote {
+    font-size: 1.2em;
+}
+
+.quote {
+    text-align: center;
+}
+
+.universalButton {
+    background-color: var(--color-base);
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 5px;
+    font-size: 0.8em;
+    border-radius: 30px;
+    color: var(--color-bg);
+    width: 20%;
+}
+
+.technologyList {
+    padding-left: 40px;
+}
+
+.project-card {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-feed {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}

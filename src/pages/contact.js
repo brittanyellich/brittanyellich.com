@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Layout } from '../components/common'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faLinkedinIn, faTwitch, faGithub } from '@fortawesome/free-brands-svg-icons'
+import Button from '../components/Button'
 
 const ContactPage = () => (
     <Layout>
@@ -12,13 +10,15 @@ const ContactPage = () => (
                 <section className="content-body">
                     I'm always open to new freelance projects and opportunities as my schedule permits. The best way to get in touch with me is through email 
                     at: <a href = "mailto: brittany@brittanyellich.com">brittany@brittanyellich.com</a>
+                    <hr />
                     I'm also available through the following:                    
                 </section>
+                <br />
                 <section className="content-body" style={{ textAlign: `center` }}>
-                    <a href="https://twitter.com/brittanyellich">Twitter <FontAwesomeIcon icon={faTwitter} /></a>
-                    <a href="https://linkedin.com/in/brittany-ellich">LinkedIn <FontAwesomeIcon icon={faLinkedinIn} /></a>
-                    <a href="https://github.com/b-marie">Github <FontAwesomeIcon icon={faGithub} /></a>
-                    <a href="https://www.twitch.tv/jaquenetta">Twitch <FontAwesomeIcon icon={faTwitch} /></a>
+                    <a href="https://twitter.com/brittanyellich"><Button buttonText="Twitter" /></a>
+                    <a href="https://linkedin.com/in/brittany-ellich"><Button buttonText="LinkedIn" /></a>
+                    <a href="https://github.com/b-marie"><Button buttonText="GitHub" /></a>
+                    <a href="https://www.twitch.tv/jaquenetta"><Button buttonText="Twitch" /></a>
                 </section>
             </article>
         </div>

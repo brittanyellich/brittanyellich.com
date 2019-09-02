@@ -4,6 +4,9 @@ import { graphql } from 'gatsby'
 
 import { Layout, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import Button from '../components/Button'
+import ResumeDownloadButton from '../components/ResumeDownloadButton'
+import ProjectsList from '../components/ProjectsList'
 
 /**
 * Main index page (home page)
@@ -20,8 +23,23 @@ const Index = ({ data, location, pageContext }) => {
         <>
             <MetaData location={location} />
             <Layout isHome={true}>
-                <div className="container">
-                <section className="content-title" style={{ textAlign: `center` }}>
+                <div className="container" style={{ textAlign: `center` }}>
+                <section className="content-title">
+                    Experience
+                </section>
+                <ResumeDownloadButton />
+                <a href="/about"><Button buttonText="About Me"/></a>
+                <br />
+                <br />
+                <hr />
+                <section className="content-title">
+                    Recent Projects
+                </section>
+                <ProjectsList />
+                <br />
+                <br />
+                <hr />
+                <section className="content-title">
                     Recent Blog Posts
                 </section>
                     <section className="post-feed">

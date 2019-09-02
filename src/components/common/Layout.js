@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faRss, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import Quote from '../Quote'
 
 import { Navigation } from '.'
 import config from '../../utils/siteConfig'
@@ -92,6 +93,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
             <div className="viewport-bottom">
                 {/* The footer at the very bottom of the screen */}
                 <footer className="site-foot">
+                    <Quote />
                     <div className="site-foot-nav container">
                         <div className="site-foot-nav-left">
                             <Link to="/">{site.title}</Link> © 2019

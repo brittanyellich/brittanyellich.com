@@ -1,6 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Layout } from '../components/common'
+import Experience from '../components/Experience'
+import ResumeDownloadButton from '../components/ResumeDownloadButton'
+
 
 const AboutPage = () => (
     <Layout>
@@ -12,10 +14,15 @@ const AboutPage = () => (
                 </section>
                 <img className="img-round-large" src="./images/Profile-Photo.jpg" />
                 <section className="content-body">
-                    I live in Portland, Oregon with my husband, dog, and two cats. I'm a Software Engineer, and particularly like building software using .NET core and React.
-                    When I'm not working or building something, I like to spend my time reading, writing, playing video games, or hiking.
+                    I live in Portland, Oregon with my husband, dog, and two cats. I'm a Software Engineer, and particularly like building software using .NET Core and React.
+                    When I'm not working or building something, I like to spend my time reading, writing, playing video games, or mountain biking.
                 </section>
+                <br />
+                <ResumeDownloadButton />
+                <br />
+                <h5 className="content-title">Experience</h5>
             </article>
+            <Experience />
         </div>
     </Layout>
 )
