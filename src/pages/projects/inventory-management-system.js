@@ -8,7 +8,7 @@ const QuoteGenerator = () => (
             <article className="content" style={{ textAlign: `center` }}>
                 <h1 className="content-title">Inventory Management System</h1>
                 <img src="https://brittanyellichpublic.s3-us-west-2.amazonaws.com/inventorymanagementsystemimage.PNG" alt="image of inventory management system project" />
-                <a href="https://github.com/b-marie/InventoryManagementSystem">
+                <a href="https://github.com/b-marie/InventoryManagementSystem" target="_blank" rel="noopener noreferrer">
                     <Button buttonText="View project" />
                 </a>
                 <hr></hr>

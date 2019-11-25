@@ -8,7 +8,7 @@ const QuoteGenerator = () => (
             <article className="content" style={{ textAlign: `center` }}>
                 <h1 className="content-title">The RGB Color Game</h1>
                 <img src="https://brittanyellichpublic.s3-us-west-2.amazonaws.com/rgbcolorgameimage.PNG" alt="image of rgb color game project" />
-                <a href="https://beemarie.org/portfolio/colorGame.html">
+                <a href="https://beemarie.org/portfolio/colorGame.html" target="_blank" rel="noopener noreferrer">
                     <Button buttonText="View project" />
                 </a>
                 <hr></hr>
